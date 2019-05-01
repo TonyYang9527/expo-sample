@@ -53,7 +53,10 @@ ParcelStack.navigationOptions = ({ navigation }: NavigationScreenProps) => {
 const MeStack = createStackNavigator({ MeScreen });
 MeStack.navigationOptions = {
     tabBarLabel: "Me",
-    tabBarIcon: ({ tintColor }: TabScene) => <Icon name="ios-cog" type="ionicon" color={tintColor} />,
+    tabBarIcon: ({ tintColor }: TabScene) => {
+        let iconName = Platform.select({ ios: "ios-person", android: "md-person" });
+        return <Icon name={iconName} type="ionicon" color={tintColor} />;
+    },
     drawerLabel: "Me",
     drawerIcon: ({ tintColor }: TabScene) => <Icon name="md-cog" type="ionicon" color={tintColor} />
 };
