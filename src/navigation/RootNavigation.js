@@ -10,7 +10,7 @@ export default createAppContainer(createSwitchNavigator(
     {
         Loading: LoadingScreen,
         App: MainNavigator,
-        Auth: SignInStack,
+        Auth: SignInScreen,
 
         ParcelDetail: ParcelDetailScreen,
         Setting: SettingScreen,
