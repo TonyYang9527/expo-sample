@@ -42,24 +42,36 @@ export default class SignInScreen extends Component {
         </TouchableOpacity> */}
 
 
-        <TouchableOpacity style={[styles.buttonContainer, styles.googleButton]} onPress={this._signInAsync}>
+
+        <TouchableOpacity style={{
+          height: 45,
+          width: 250,
+          marginBottom: 8,
+          borderRadius: 5,
+          backgroundColor: "#CB3F20",
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }} onPress={this._signInAsync}>
           <View style={{
             justifyContent: "center",
             alignItems: 'center',
-            padding: 10,
-            backgroundColor: Color("#DD4B39").lighten(0.3)
+            padding: 5,
+            borderRadius: 5,
+            width: '20%',
+            backgroundColor: Color("#CB3F20").lighten(0.3)
           }}>
             <Image style={{
-              width: 30,
-              height: 30,
-
+              resizeMode: 'contain',
+              width: "95%",
+              height: "95%",
             }} source={{ uri: 'https://png.icons8.com/google/androidL/40/FFFFFF' }} />
           </View>
 
           <View style={{
-
-            padding: 30,
-            width: '100%'
+            width: '80%',
+            alignSelf: 'center',
+            justifyContent: "center", alignItems: 'center', alignContent: 'center',
           }}>
             <Text style={{
               color: 'white',
@@ -70,23 +82,35 @@ export default class SignInScreen extends Component {
 
 
 
-        <TouchableOpacity style={[styles.buttonContainer, styles.fabookButton]} onPress={this._signInAsync}>
+        <TouchableOpacity style={{
+          height: 45,
+          width: 250,
+          marginBottom: 8,
+          borderRadius: 5,
+          backgroundColor: "#3B5998",
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }} onPress={this._signInAsync}>
           <View style={{
             justifyContent: "center",
             alignItems: 'center',
-            padding: 10,
-            backgroundColor: Color("#333").lighten(0.45)
+            padding: 5,
+            borderRadius: 5,
+            width: '20%',
+            backgroundColor: Color("#3B5998").lighten(0.3)
           }}>
             <Image style={{
-              width: 30,
-              height: 30,
+               resizeMode: 'contain',
+               width: "95%",
+               height: "95%",
             }} source={{ uri: 'https://png.icons8.com/facebook/androidL/40/FFFFFF' }} />
           </View>
 
           <View style={{
-            padding: 30,
-            width: '100%',
+            width: '80%',
             alignSelf: 'center',
+            justifyContent: "center", alignItems: 'center', alignContent: 'center',
           }}>
             <Text style={{
               color: 'white',
@@ -96,7 +120,7 @@ export default class SignInScreen extends Component {
         </TouchableOpacity>
 
 
-      
+
 
       </SafeAreaView>
     );
@@ -112,11 +136,13 @@ const styles = StyleSheet.create({
 
   buttonContainer: {
     height: 45,
+    width: 250,
+    marginBottom: 8,
+
+
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 8,
-    width: 250,
     borderRadius: 5,
   },
 
@@ -134,14 +160,23 @@ const styles = StyleSheet.create({
     color: 'white',
   },
 
-  fabookButton: {
-    // backgroundColor: "#4863AE",
-     backgroundColor: "#333",
+
+  fabookButtonContainer: {
+    height: 45,
+    width: 250,
+    marginBottom: 8,
+    borderRadius: 5,
+    backgroundColor: "#333",
+
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+
 
   },
+
   googleButton: {
     backgroundColor: "#DD4B39",
-    // backgroundColor: "#4863AE",
   },
 
 });
