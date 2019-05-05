@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { LinearGradient } from 'expo';
-import { Image, StyleSheet, TouchableOpacity, View, Text, ActivityIndicator, } from 'react-native';
+import { Image, StyleSheet, TouchableOpacity, View, Text, ActivityIndicator} from 'react-native';
 import { Colors, Fonts } from '../constants';
 
 const borderRadius = 40;

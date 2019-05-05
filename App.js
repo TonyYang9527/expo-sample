@@ -20,6 +20,7 @@ export default class App extends React.Component {
       'Lato-Regular': require('./assets/fonts/Lato-Regular.ttf'),
       'Lato-Semibold': require('./assets/fonts/Lato-Semibold.ttf'),
       'Lato-Thin': require('./assets/fonts/Lato-Thin.ttf'),
+      'icomoon': require('./assets/fonts/icomoon.ttf'),
     }),
   ]);
 

@@ -8,11 +8,25 @@ import {
   TouchableOpacity,
   Alert,
   AsyncStorage,
-  Image
+  Image,
+  ImageBackground,
+  Dimensions,
+  Animated,
+  Platform
 } from 'react-native';
 
 import Color from 'color';
+import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
 
+import icoMoonConfig from '../../assets/fonts/selection.json';
+const Icon = createIconSetFromIcoMoon(
+  icoMoonConfig,
+  'icomoon',
+  'icomoon.ttf'
+);
+
+const SCREEN_WIDTH = Dimensions.get('window').width;
+const SCREEN_HEIGHT = Dimensions.get('window').height;
 export default class SignInScreen extends Component {
 
 
@@ -25,104 +39,119 @@ export default class SignInScreen extends Component {
 
   render() {
     return (
-      <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
+        <ImageBackground
+          source={require('../../assets/images/background.png')}
+          resizeMode="cover"
+          style={styles.bgImage}>
 
-        {/* <TouchableOpacity style={[styles.buttonContainer, styles.fabookButton]} onPress={this._signInAsync} >
-          <View style={styles.socialButtonContent}>
-            <Image style={styles.icon} source={{ uri: 'https://png.icons8.com/facebook/androidL/40/FFFFFF' }} />
-            <Text style={styles.loginText}>Sign in  with facebook</Text>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={[styles.buttonContainer, styles.googleButton]} onPress={this._signInAsync}>
-          <View style={styles.socialButtonContent}>
-            <Image style={styles.icon} source={{ uri: 'https://png.icons8.com/google/androidL/40/FFFFFF' }} />
-            <Text style={styles.loginText}>Sign in with google</Text>
-          </View>
-        </TouchableOpacity> */}
-
-
-
-        <TouchableOpacity style={{
-          height: 45,
-          width: 250,
-          marginBottom: 8,
-          borderRadius: 5,
-          backgroundColor: "#CB3F20",
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }} onPress={this._signInAsync}>
           <View style={{
-            justifyContent: "center",
+            flex: 1,
+            flexDirection: 'column',
+            justifyContent: 'center',
             alignItems: 'center',
-            padding: 5,
-            borderRadius: 5,
-            width: '20%',
-            backgroundColor: Color("#CB3F20").lighten(0.3)
           }}>
-            <Image style={{
-              resizeMode: 'contain',
-              width: "95%",
-              height: "95%",
-            }} source={{ uri: 'https://png.icons8.com/google/androidL/40/FFFFFF' }} />
+            <View style={{ 
+              height: '40%',
+              // flex: 1, alignItems: 'center', justifyContent: 'center' 
+              }}>
+              <Animated.Image resizeMode="contain" style={{ height: 90 }} source={require('../../assets/images/white-logo.png')} />
+            </View>
+
+
+            <View style={{ 
+              paddingBottom :10,
+              // flex: 1, alignSelf: 'center' 
+              }}  >
+              <Icon name="google-plus" size={24} color="#CB3F20"  />
+              <Text>Please login with below</Text>
+            </View>
+
+            <View style={{
+            
+              // flex: 1,
+              // alignItems: 'flex-start',
+              // justifyContent: 'flex-start',
+              // alignSelf: 'center',
+              // paddingBottom: Platform.OS === 'android' ? 30 : 0,
+            }}>
+            
+              <TouchableOpacity style={{
+                height: 45,
+                width: 250,
+                marginBottom: 8,
+                borderRadius: 5,
+                backgroundColor: "#CB3F20",
+                flexDirection: 'row',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }} onPress={this._signInAsync} activeOpacity={0.5}>
+                <View style={{
+                  justifyContent: "center",
+                  alignItems: 'center',
+                  padding: 5,
+                  borderRadius: 5,
+                  width: '20%',
+                  backgroundColor: Color("#CB3F20").lighten(0.3)
+                }}>
+                  <Image style={{
+                    resizeMode: 'contain',
+                    width: "95%",
+                    height: "95%",
+                  }} source={{ uri: 'https://png.icons8.com/google/androidL/40/FFFFFF' }} />
+                </View>
+
+                <View style={{
+                  width: '80%',
+                  alignSelf: 'center',
+                  justifyContent: "center", alignItems: 'center', alignContent: 'center',
+                }}>
+                  <Text style={{
+                    color: 'white',
+                    justifyContent: "center", alignItems: 'center', alignContent: 'center',
+                  }}>Sign in with google</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity style={{
+                height: 45,
+                width: 250,
+                marginBottom: 8,
+                borderRadius: 5,
+                backgroundColor: "#3B5998",
+                flexDirection: 'row',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }} onPress={this._signInAsync} activeOpacity={0.5}>
+                <View style={{
+                  justifyContent: "center",
+                  alignItems: 'center',
+                  padding: 5,
+                  borderRadius: 5,
+                  width: '20%',
+                  backgroundColor: Color("#3B5998").lighten(0.3)
+                }}>
+                  <Image style={{
+                    resizeMode: 'contain',
+                    width: "95%",
+                    height: "95%",
+                  }} source={{ uri: 'https://png.icons8.com/facebook/androidL/40/FFFFFF' }} />
+                </View>
+
+                <View style={{
+                  width: '80%',
+                  alignSelf: 'center',
+                  justifyContent: "center", alignItems: 'center', alignContent: 'center',
+                }}>
+                  <Text style={{
+                    color: 'white',
+                    justifyContent: "center", alignItems: 'center', alignContent: 'center',
+                  }}>Sign in with facebook</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
-
-          <View style={{
-            width: '80%',
-            alignSelf: 'center',
-            justifyContent: "center", alignItems: 'center', alignContent: 'center',
-          }}>
-            <Text style={{
-              color: 'white',
-              justifyContent: "center", alignItems: 'center', alignContent: 'center',
-            }}>Sign in with google</Text>
-          </View>
-        </TouchableOpacity>
-
-
-
-        <TouchableOpacity style={{
-          height: 45,
-          width: 250,
-          marginBottom: 8,
-          borderRadius: 5,
-          backgroundColor: "#3B5998",
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }} onPress={this._signInAsync}>
-          <View style={{
-            justifyContent: "center",
-            alignItems: 'center',
-            padding: 5,
-            borderRadius: 5,
-            width: '20%',
-            backgroundColor: Color("#3B5998").lighten(0.3)
-          }}>
-            <Image style={{
-               resizeMode: 'contain',
-               width: "95%",
-               height: "95%",
-            }} source={{ uri: 'https://png.icons8.com/facebook/androidL/40/FFFFFF' }} />
-          </View>
-
-          <View style={{
-            width: '80%',
-            alignSelf: 'center',
-            justifyContent: "center", alignItems: 'center', alignContent: 'center',
-          }}>
-            <Text style={{
-              color: 'white',
-              justifyContent: "center", alignItems: 'center', alignContent: 'center',
-            }}>Sign in with facebook</Text>
-          </View>
-        </TouchableOpacity>
-
-
-
-
-      </SafeAreaView>
+        </ImageBackground>
+      </View>
     );
   }
 }
@@ -132,6 +161,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
+
   },
 
   buttonContainer: {
@@ -167,16 +197,19 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     borderRadius: 5,
     backgroundColor: "#333",
-
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-
-
   },
 
   googleButton: {
     backgroundColor: "#DD4B39",
+  },
+
+  bgImage: {
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
+    paddingHorizontal: 30,
   },
 
 });
