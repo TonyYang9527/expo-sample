@@ -23,38 +23,28 @@ export default class SignInScreen extends Component {
     return (
       <View style={styles.container}>
         <ImageBackground resizeMode="cover" style={styles.bgImage} source={require('../../assets/images/background.png')}>
-
           <View style={{
             flex: 1,
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-            <View style={{
-              height: '40%', alignItems: 'center', justifyContent: 'center'
-              // flex: 1, alignItems: 'center', justifyContent: 'center' 
-            }}>
+            <View style={{ height: '40%', alignItems: 'center', justifyContent: 'center' }}>
               <Animated.Image resizeMode="contain" style={{ height: 90 }} source={require('../../assets/images/white-logo.png')} />
             </View>
 
+            <View style={{ paddingBottom: 12, alignSelf: 'center' }}  >
 
-            <View style={{
-              paddingBottom: 12, alignSelf: 'center',
-              // flex: 1, alignSelf: 'center' 
-            }}  >
-
-              <FotIcon name="JD6" size={32} color="#FC641F" />
+              {/* <FotIcon name="JD6" size={32} color="#FC641F" />
               <FotIcon name="Tmall2" size={32} color="#FC641F" />
               <FotIcon name="Tmall6" size={32} color="#3B5998" />
 
               <FotIcon name="explore" size={32} color="#3B5998" />
-              <FotIcon name="google-plus2" size={32} color="#3B5998" />
+              <FotIcon name="google-plus2" size={32} color="#3B5998" /> */}
 
-              <Text style={{
-                fontSize: 20,
-                fontWeight: 'bold',
-                color: '#FFFFFF'
-              }} >Please login with below</Text>
+              <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#FFFFFF' }} >
+                Please login with below
+              </Text>
             </View>
             <View style={{
 
