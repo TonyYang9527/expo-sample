@@ -7,7 +7,7 @@ import {
     NavigationScreenProps, NavigationTransitionProps,
     StackViewTransitionConfigs, TabScene, TransitionConfig
 } from "react-navigation";
-import { MeScreen, ParcelScreen } from '../screens';
+import { MeScreen, ParcelScreen,ShippingScreen } from '../screens';
 
 
 const IOS_MODAL_ROUTES = ["OptionsScreen"];
@@ -50,6 +50,19 @@ ParcelStack.navigationOptions = ({ navigation }: NavigationScreenProps) => {
 };
 
 
+const ShippingStack = createStackNavigator({ ShippingScreen });
+ShippingStack.navigationOptions = {
+    tabBarLabel: "Shipping",
+    tabBarIcon: ({ tintColor }: TabScene) => {
+        let iconName = Platform.select({ ios: "ios-boat", android: "md-boat" });
+        return <Icon name={iconName}   type="ionicon" color={tintColor} />;
+    },
+    drawerLabel: "Shipping",
+    drawerIcon: ({ tintColor }: TabScene) => <Icon name="md-boat" type="ionicon" color={tintColor} />
+};
+
+
+
 const MeStack = createStackNavigator({ MeScreen });
 MeStack.navigationOptions = {
     tabBarLabel: "Me",
@@ -61,6 +74,6 @@ MeStack.navigationOptions = {
     drawerIcon: ({ tintColor }: TabScene) => <Icon name="md-cog" type="ionicon" color={tintColor} />
 };
 
-export default createBottomTabNavigator({ ParcelStack, MeStack });
+export default createBottomTabNavigator({ ParcelStack,ShippingStack,MeStack });
 
 

@@ -9,6 +9,8 @@ import ParcelScreen from './ParcelScreen';
 import SettingScreen from './SettingScreen';
 import SignInScreen from './SignInScreen';
 
+import ShippingScreen from './ShippingScreen';
+
 export {
     AboutScreen,
     AddressScreen,
@@ -19,4 +21,5 @@ export {
     ParcelScreen,
     SettingScreen,
     SignInScreen,
+    ShippingScreen,
 };
