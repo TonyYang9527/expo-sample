@@ -25,7 +25,7 @@ export default class App extends React.Component {
   ]);
 
   _handleLoadingError = (error) => {
-    console.warn(error);
+    console.info(error);
   };
   _handleFinishLoading = () => {
     this.setState({ isLoadingComplete: true });
